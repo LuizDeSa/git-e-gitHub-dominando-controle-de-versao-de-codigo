@@ -1,0 +1,64 @@
+Este curso é uma continuação do curso Git e GitHub: compartilhando e colaborando em projetos, então nós vamos partir do ponto onde paramos nele.
+
+Caso você não tenha feito o curso anterior, será necessário clonar o repositório do curso para que todo o histórico de commits exista em seu ambiente local. Para isso, acesse o repositório do instrutor Rodrigo Ferreira e clique no botão “Fork”. Isso criará uma cópia do repositório em sua conta. Com isso, você pode executar o git clone informando o endereço do seu repositório.
+
+Agora você já está pronto(a) para continuar com esse curso.
+
+Bons estudos!
+
+
+===================================================================================================================
+
+git log -> visualiza nossa lista de commits
+            visualizamos o hash completo do commit, e sua posição no histórico, incluindo a qual branch ele pertence
+
+
+
+    Ao lado do hash do ultimo commit, temos (HEAD -> main, origin/main, origin/HEAD). O que isso significa?
+        -> main é o nome de um branch
+        -> origin, já sabemos que é o nosso repositório remoto
+        -> PORTANTO origin/main significa que esse commit também é onde está o nosso branch main no repositório remoto
+        -> Agora, o "HEAD" e o "origin/HEAD", que significam a mesma coisa que "HEAD" no repositório remoto,  referem-se ao estado atual no repositório remoto
+
+
+git log --oneline -> mostrando apenas os primeiros caracteres do hash e a mensagem do commit
+
+
+git log -p ->  permite examinar o commit e suas alterações, não apenas sua mensagem, mas também seu conteúdo. ele mostrará um diff
+
+git log --graph -> exibirá uma linha do nosso log, é mais útil quando falarmos um pouco sobre branches.
+
+
+git log --pretty|
+                | ---> São sinônimos -> permite formatar a saída do git log
+git log --format|
+
+Ex: git log --format="%H %an"
+
+Para saber mais formatos de saida ->
+-> git log --help e digitar /pretty formats para pesquisar sobre essa opção
+
+
+# Analisando um commit específico
+git log --oneline
+
+git show {hash do commit} -> Ex: git show 2ad48c0
+
+caso seja executado um git show sem o hash na frente, serão exibidos os detalhes do ultimo commit
+
+
+PRÓXIMAS ALTERAÇÕES
+Apos alterar um arquivos, ANTES de rodar um git add . podemos verificar as mudanças realizadas no código.
+O objetivo é visualizar todas as alterações antes de prosseguir com o commit.
+
+Para isso -> git diff
+ -> Git compara o último commit com o estado atual do código por padrão
+
+è possivel comprara entre dois commits distintos
+
+Para analisar a diferença entre esses dois commits específicos
+
+git diff, o commit mais antigo, "..", o commit mais novo -> Ex:: git diff 5880fc1..5bc160e
+
+ao executar um git add . o git diff não exibe mais nada
+
