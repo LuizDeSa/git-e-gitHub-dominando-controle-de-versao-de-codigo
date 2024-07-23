@@ -54,7 +54,10 @@ O objetivo é visualizar todas as alterações antes de prosseguir com o commit.
 Para isso -> git diff
  -> Git compara o último commit com o estado atual do código por padrão
 
-è possivel comprara entre dois commits distintos
+Podemos executar um git diff {hash do commit} para compara as diferenças entre um commit especifico e a versão atual(head atual)
+Exemplo: git diff 5880fc1
+
+É possivel comprara entre dois commits distintos
 
 Para analisar a diferença entre esses dois commits específicos
 
@@ -62,3 +65,7 @@ git diff, o commit mais antigo, "..", o commit mais novo -> Ex:: git diff 5880fc
 
 ao executar um git add . o git diff não exibe mais nada
 
+Ao realizar o commit e rodar git log --oneline podemos ver a diferença
+
+8563ec5 (HEAD -> main) Mudando o título para português
+237cada (origin/main, origin/HEAD) mudanças no titulo e gitignore
