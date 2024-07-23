@@ -69,3 +69,9 @@ Ao realizar o commit e rodar git log --oneline podemos ver a diferença
 
 8563ec5 (HEAD -> main) Mudando o título para português
 237cada (origin/main, origin/HEAD) mudanças no titulo e gitignore
+
+======================================================================================
+Branch
+
+Vamos clonar novamente o projeto e execurar algumas mudanças e commitar apartit desse novo clone e rodar um git push origin main
+Após vamos editar o mesmo arquivo na outra pasta 
