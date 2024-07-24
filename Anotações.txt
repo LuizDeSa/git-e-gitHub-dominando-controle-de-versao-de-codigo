@@ -75,3 +75,31 @@ Branch
 
 Vamos clonar novamente o projeto e execurar algumas mudanças e commitar apartit desse novo clone e rodar um git push origin main
 Após vamos editar o mesmo arquivo na outra pasta 
+
+Fizemos o commit, mas agora, quando formos fazer o git push origin main, o Git vai rejeitar esse push, dizendo que existem atualizações feitas que ainda não estão no código.
+
+Isso é um "problema" que já conhecemos antes, então o que precisa ser feito? Primeiro, precisamos fazer um git pull. Com isso, ele vai trazer as alterações e fazer o que ele chama de merge.
+
+
+ENTENDENDO SOBRE Branch
+Esse site mostra como o git funciona de forma gráfica
+https://git-school.github.io/visualizing-git/
+
+
+git branch -> retorna quantas branchs exixstem no nosso ptojeto
+
+git branch nova-branch -> cria uma nova branch
+
+git checkout nome-branch -> alterna entre branchs
+
+git checkout -b nova-funcionalidade -> cria uma nova branch alterna para a nova branchs
+
+
+
+Além desse comando mais antigo, podemos utilizar o
+
+git switch nome-branch -> alterna entre branchs
+
+git switch -c nome-branch
+
+Parei no comando git switch -c nova-funcionalidade
