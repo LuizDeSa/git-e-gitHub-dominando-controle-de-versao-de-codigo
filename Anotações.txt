@@ -110,3 +110,12 @@ Na branch criada podemos executar um git push tendo como origin a nova branch cr
 
 git push origin nova-funcionalidade
 
+https://git-school.github.io/visualizing-git/
+
+
+
+
+Se você conhece o git com certeza já usou o comando git checkout. As novas versões do git mexeram nesse comando para deixar ele mais coerente. Na verdade o git checkout foi separado em dois comandos:
+https://cursos.alura.com.br/extra/alura-mais/entenda-os-comandos-git-restore-e-switch-c99
+- git restore
+- git switch
