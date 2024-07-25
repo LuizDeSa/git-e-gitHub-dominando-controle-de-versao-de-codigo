@@ -147,3 +147,38 @@ git restore --staged index.html
 
 
 
+UNINDO AS RAMIFICAÇÕES 
+
+
+Após realizar as modificações na branch nova-funcionalidade e realizar o commit basta voltar na branch main e executar: 
+	git merge nova-funcionalidade 
+e o git vai levar a main para o mesmo local.
+ 
+Como a branch nova-funcionalidade evoluiu sem que a mester tivesse alterações estamos falando de  um merge fast forward
+
+
+O que é fast forward?
+Acontece quando a branch nova-funcionalidade evoluiu na mesma linha, sem que a master tivesse novos commits.
+
+Então, na hora de fazer o merge, é muito simples: não precisamos criar nenhum novo commit; o Git entende tudo e só move as coisas. Se queremos unir as coisas, a partir de agora, a branch principal estará no mesmo ponto que a nova-funcionalidade. Isso é o chamado fast forward.
+
+
+REALIZANDO COMMITS NAS DUAS BRANCHS COM ALTERAÇÕES DIFERENTES
+Após realizar alteraçõe nas duas branchs e commitar vamos voltar para a branch main e executar um git merge da nova funcionaliade
+
+Com esses comandos, será aberto um editor que permite a alteração da mensagem de commit de merge. No nosso caso, vamos deixar o commit como está.
+
+Como o editor é o VI, basta executar :x para salvar e sair. Ao final, teremos um novo commit criado. Se executarmos o comando git log --graph, podemos observar o que acontece na main.
+
+Nesse caso temos um MERGE COMMIT
+
+
+AJUSTES FINAIS
+
+Para finalizar, vamos executar o comando git push origin main para atualizar a main com todo o trabalho novo. 
+
+Em seguida, removeremos a branch nova-funcionalidade com git branch -d, para manter o projeto limpo e sem excesso de branches: 
+git branch -d nova-funcionalidade
+
+Ainda podemos remover a branch nova-funcionalidade do repositório remoto no GitHub. Para isso, executamos o seguinte comando:
+git push origin :nova-funcionalidade
