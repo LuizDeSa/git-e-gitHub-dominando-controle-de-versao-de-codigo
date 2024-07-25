@@ -119,3 +119,31 @@ Se você conhece o git com certeza já usou o comando git checkout. As novas ver
 https://cursos.alura.com.br/extra/alura-mais/entenda-os-comandos-git-restore-e-switch-c99
 - git restore
 - git switch
+
+O git checkout é utilizado para trocar de branch ou restaurar working tree files
+Esse comando foi dividido em dois
+
+** git restore
+
+git restore --source hash-commit arquivo-ou-pasta -> coloca arquivos ou pasta ou o projeto todo naquele commit desajado
+
+Ex: 
+git restore --source e04771386a8e08060f7ec247c73f655da3c6f003 . -> para o projeto todo
+
+git restore --source e04771386a8e08060f7ec247c73f655da3c6f003 index.html -> para um arquivo
+
+git switch master -> retorna a master
+Nesse sentido ao rodar um git status vemos que existem alterações para ser comitadas com a esxlusão das linhas 
+
+para voltar para o ultimo commit basta digitar um git restore passando o nome do arquivo desejado.
+Ex:git restore index.html
+
+Se quizermos voltar para um commit especifico e salvar as mudanças atuais para staged (pronta para commitar)
+git restore --staged --source=1849ea3 index.html
+
+
+Para desfazer a ação anterior
+git restore --staged index.html
+
+
+
