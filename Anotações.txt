@@ -221,3 +221,46 @@ git push origin main
 
 asd
 
+========================================================================================================================================
+
+Estando na branch criada para nova funcionalidade, estamos desenvolvendo nosso trabalho e de repente surge uma demanda urgente para resolver.
+
+Nesse caso, antes de resolver essa nova demanda temos que engavetar essa modificações que ainda não foram commitadas para continuar depois. Não podemos criar um commit agora porque nosso projeto está em um estado inválido. Além disso, se executarmos um git status, temos modificações. Portanto, não podemos começar a trabalhar em outra coisa e ir para outro branch, porque o arquivo app.js está modificado
+
+Para isso vamos excutar um 
+
+git stash
+
+É uma pilha
+
+o comando git stash, ele vai pegar tudo o que está no nosso estado atual e estocar. Ele vai guardar para que possamos recuperá-lo depois. 
+
+Terminanos a noss demanda urgente e queremos voltar para as nosso trabalho, executamos
+
+git stash pop
+além de aplicar o item da stash, ele também o remove de lá. Esse comando, sem nenhum parâmetro extra, vai aplicar o último item adicionado à stash, mas nós também podemos informar um índice para ele, como git stash pop 1.
+
+git stash list -> exibe todas as modificações que estã na pilha do stash
+
+git stash clear -> limpa stash
+
+git stash push -m "Movendo chamada de função" -> acresenta uma descrição ao nosso stash
+
+git stash apply indice -> permite escolher qual stash queremos aplicar neste momento, Se ouver duas ou mais modificações referentes ao mesmo arquivo, podemos ter problemas de conflitos. 
+        esse comando não remove o item da stash, ou seja, se após executar o comando git stash apply 1 você executar git stash list, o item referente ao índice 1 continuará na stash.
+
+Drop
+O git stash drop funciona exatamente como o pop, mas com uma simples diferença: ele apenas remove o item da stash, sem aplicá-lo em nosso repositório. Dessa forma, git stash drop remove o último item adicionado à stash, enquanto o git stash drop 1 remove da stash o item com índice 1.
+
+git restore . -> restaura todos os arquivos do diretório atual para o estado do ultimo commit
+ -> substitui o git checkout --
+ 
+com git restore --staged app.js, não desfazemos a alteração, mas retornamos ao estado anterior. Agora, é como se não tivéssemos feito o git add.
+
+suponha que queremos mover nosso index.html para o estado que estava quando fizemos o Merge branch 'nova-funcionalidade' into main.
+
+git restore --source = 5081a55bc92af2917c8519f16a7412b86ba3b1c2 index.html
+
+Podemos modificar o arquivo a partir daquele estado e adicionar um novo commit, se quisermos. mas, se quisermos apenas visualizar o arquivo e entender como ele estava naquele estado, podemos desfazer esse trabalho, ou seja, restaurar para o estado normal dele com o git restore index.html, que é equivalente a fazer --source = head.
+
+git branch -d movendo-detalhes
