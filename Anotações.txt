@@ -182,3 +182,25 @@ git branch -d nova-funcionalidade
 
 Ainda podemos remover a branch nova-funcionalidade do repositÃ³rio remoto no GitHub. Para isso, executamos o seguinte comando:
 git push origin :nova-funcionalidade
+
+================================================================================================================================
+
+git rebease
+
+Cenario-> na branch main criamos alguns commits e depois executamos um git checkout -b para criar uma branch
+Na main, relaizamos mais alguns commits e voltamos para a nova branch criada e executamos alguns commits
+
+Agora queremos deslocar branch criada para o estado atual da branch master. Ou seja quermos que a nossa nova branch, criada recentemente seja, seja criada 
+apartir do estado atual da main.
+
+Para isso utilizamos o rebase
+
+Na branch criada vamos executar o comando git rebase main
+
+Ele pegará o primeiro commit e tentar adicionar antes do commit nova-funcionalidade. Pegará o próximo commit, que é o último da main, 
+e tentar adicionar antes do commit nova-funcionalidade. Após isso, pega todos os commits da nova-funcionalidade e aplica depois do 
+último da main.
+
+Se estamos na nova-funcionalidade e tentamos fazer o rebase com a main, ele vai alterar o branch para ir para a main. Depois da main, 
+ele vai aplicando cada um dos commits da nova-funcionalidade. Isso é feito commit por commit, porque se tiver algum conflito em algum 
+dos commits, vamos resolvendo um a um. Dessa forma, conseguimos reescrever a história.
