@@ -293,3 +293,27 @@ Conferindo as tags no GitHub
 
 -> permite o download do projeto em arquivos compactados, tanto no formato .zip, quanto no .tar.gz
 
+========================================================================================
+Tag anotadas
+Contem uma descrição para aquela tag
+
+para isso vamos remover a tag no repositorio remoto(pela inteface do git hub)
+e apagar no repositorio local por meio do comando
+
+git tag -d v0.1.1
+
+
+Para criar uma Annotated tag digitamos:
+git tag -a nome_da_tag -m "mensagem da tag"
+ou 
+git tag nome_da_tag -m "mensagem da tag"
+
+Ex: git tag -a v0.1.1 -m "Lançamento da versão 0.1.1"
+
+Enviando para o git hub
+git push origin v0.1.1
+
+Analisando uma Annotated Tag no GitHub
+Ao recarregarmos a página, e clicarmos no retângulo com reticências ao lado do nome "v0.1.1", abriremos a mensagem "Lançamento da versão 0.1.1", abaixo do nome da tag.
+
+A annotated tag, além da mensagem exibida, carrega informações da pessoa autora da tag e a data que a tag foi criada, enquanto a tag comum é apenas um ponteiro para o commit
