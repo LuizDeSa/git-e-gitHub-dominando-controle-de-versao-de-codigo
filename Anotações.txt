@@ -317,3 +317,19 @@ Analisando uma Annotated Tag no GitHub
 Ao recarregarmos a página, e clicarmos no retângulo com reticências ao lado do nome "v0.1.1", abriremos a mensagem "Lançamento da versão 0.1.1", abaixo do nome da tag.
 
 A annotated tag, além da mensagem exibida, carrega informações da pessoa autora da tag e a data que a tag foi criada, enquanto a tag comum é apenas um ponteiro para o commit
+
+arquivos .zip e .tar.gz -> Esses arquivos são o projeto em si, comprimidos em dois formatos diferentes (Zip e GZip). Dessa forma, pessoas que não utilizem git também podem ter acesso ao código fonte dessa release.
+
+git tag -v v0.1.1
+
+serão exibidas informações indicando para qual commit ela aponta, o tipo (podemos criar uma tag para outra coisa, mas vamos focar no tipo de commit aqui), o nome dessa tag, quem a criou e sua mensagem. Temos, portanto, as informações dessa tag.
+
+Pra uma tag não anotada como a tag do nosso exemplo da erro
+git tag -v v0.1.0
+
+==================================================================================================================
+
+É POSSIVEL CRIAR UMA RELEASE PARATIR DE UMA TAG
+
+Vamos clicar no botão "Releases" e escolher uma tag para criá-la. Essa release será a partir de nossa tag v11. Podemos criar o título dessa release, que será: "lançamento da v0.1.1".
+isso pode ser feito automaticamente com o botão "Generate release notes". Ele trará os detalhes de todos os pull requests, etc.
