@@ -264,3 +264,32 @@ git restore --source = 5081a55bc92af2917c8519f16a7412b86ba3b1c2 index.html
 Podemos modificar o arquivo a partir daquele estado e adicionar um novo commit, se quisermos. mas, se quisermos apenas visualizar o arquivo e entender como ele estava naquele estado, podemos desfazer esse trabalho, ou seja, restaurar para o estado normal dele com o git restore index.html, que é equivalente a fazer --source = head.
 
 git branch -d movendo-detalhes
+
+
+==========================================================================================
+git tag
+
+É utilizada para marcar um ponto ( um commit). Isso pode ser usado versão do nosso sistema. Serve de save point
+
+executando o git log podemos verificar a nossa arvore de commit e escolher qual o commit queremos adicionar a tags.
+
+Executando o comando 
+
+git tag nome_da_tag -> cria a tag no HEAD
+
+git tag nome_da_tag código_do_commit -> cria tag em outro commit 
+
+git tag -> exibe todas as tags
+
+git push orign nome_tag -> envia para p repositório remoto uma tag especofíca
+
+git push orign --tags, que fará o push de todas as tags.
+
+** é necessario enviar as tags para que elas apareçam no git hub
+
+Conferindo as tags no GitHub
+
+-> coluna da esquerda, na seção "Relaeases" (Lançamentos)
+
+-> permite o download do projeto em arquivos compactados, tanto no formato .zip, quanto no .tar.gz
+
