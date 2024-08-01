@@ -333,3 +333,43 @@ git tag -v v0.1.0
 
 Vamos clicar no botão "Releases" e escolher uma tag para criá-la. Essa release será a partir de nossa tag v11. Podemos criar o título dessa release, que será: "lançamento da v0.1.1".
 isso pode ser feito automaticamente com o botão "Generate release notes". Ele trará os detalhes de todos os pull requests, etc.
+
+
+==================================================================================================================
+Reaproveitando um commit de uma branch em outra branch
+
+apartir da main, vamos criar duas
+
+git branch nova-funcinalidade1
+git branch nova-funcinalidade2
+
+git switch nova-funcinalidade2
+fiz duas alterações e comitei 
+
+git switch nova-funcinalidade1
+
+Agora queremos realizar outra funcionalidade mas também queremos uma funcionalidade desenvolvida na outra branch
+
+git log nome_branch -> mostra o log da branch especificada
+
+git log nova-funcinalidade2
+
+escolhemos o hash do commit que queremos pegar as modificações e executamos 
+
+git cherry-pick e1035e691b0a07f65516d730f0d2462c5cc9fb03
+
+depois executamos um
+
+git push origin nova-funcinalidade1 nova-funcinalidade2
+
+para enviar para os repositórios remotos
+
+Vamos voltar para main para 
+
+executar um merge
+
+git merge nova-funcinalidade2
+
+git merge nova-funcinalidade1
+
+git push origin main 
