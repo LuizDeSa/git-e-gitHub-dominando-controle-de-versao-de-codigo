@@ -373,3 +373,13 @@ git merge nova-funcinalidade2
 git merge nova-funcinalidade1
 
 git push origin main 
+
+=====================================================================================
+
+Queremos saber quando uma determinada modificação foi inserida e em qual contexto utilizaríamos esse tipo de funcionalidade. Por que precisaríamos saber disso?
+
+git blame ->  mostra quem é o "culpado" por cada uma das linhas do arquivo.
+
+git blame index.html
+
+Acento circunflexo indica que é o commit original, isto é, o primeiro commit desse projeto.
